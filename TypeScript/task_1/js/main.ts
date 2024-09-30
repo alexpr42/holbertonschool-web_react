@@ -1,5 +1,3 @@
-// js/main.ts
-
 // Define the Teacher interface
 interface Teacher {
   readonly firstName: string;
@@ -25,3 +23,16 @@ const director1: Directors = {
 };
 
 console.log(director1);
+
+// Define the interface for the printTeacher function
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;  // Function signature
+}
+
+// Implement the printTeacher function
+const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+  return `${firstName.charAt(0)}. ${lastName}`;
+};
+
+// Example usage of printTeacher
+console.log(printTeacher("John", "Doe"));  // Output: J. Doe
